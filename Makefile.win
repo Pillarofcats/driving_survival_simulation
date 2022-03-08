@@ -1,0 +1,42 @@
+# Project: HW9
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main9.o animal9.o car9.o road9.o pedestrian9.o $(RES)
+LINKOBJ  = main9.o animal9.o car9.o road9.o pedestrian9.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = HW9.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before HW9.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "HW9.exe" $(LIBS)
+
+main9.o: main9.cpp
+	$(CPP) -c main9.cpp -o main9.o $(CXXFLAGS)
+
+animal9.o: animal9.cpp
+	$(CPP) -c animal9.cpp -o animal9.o $(CXXFLAGS)
+
+car9.o: car9.cpp
+	$(CPP) -c car9.cpp -o car9.o $(CXXFLAGS)
+
+road9.o: road9.cpp
+	$(CPP) -c road9.cpp -o road9.o $(CXXFLAGS)
+
+pedestrian9.o: pedestrian9.cpp
+	$(CPP) -c pedestrian9.cpp -o pedestrian9.o $(CXXFLAGS)
